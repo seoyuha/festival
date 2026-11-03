@@ -38,8 +38,7 @@ input{font-family:inherit}
 .ib.cream:disabled{background-image:var(--i-c_creamd);color:#a99}
 .ib.wood{background-image:var(--i-c_wood);color:#fff4dc}
 .ib:disabled{transform:none}
-.ib.green,.ib.cream,.ib.wood,.ib.gray{padding:0 15%;white-space:nowrap;gap:4px}
-.ib.green:disabled{padding:0 15%}
+.ib.green,.ib.cream,.ib.wood,.ib.gray,.ib.green:disabled{padding:0 !important;white-space:nowrap;gap:4px}
 .pill{border-radius:999px;display:flex;align-items:center;justify-content:center;gap:6px;font-size:18px}
 .pill.mint{background:#cdeedd;border:2px solid #8fcfb0;color:var(--green-d)}
 .pill.creamp{background:#fff6e3;border:2px solid #e2c28d;color:var(--ink)}
@@ -441,7 +440,7 @@ table.tt tr.ck{cursor:pointer}
     <div class="at ctr t-plate" style="--x:470;--y:184;--w:300;--h:40">나의 캐릭터를 골라 주세요</div>
     <div class="at cover" style="--x:118;--y:228;--w:1018;--h:372;border-radius:18px" id="cards"></div>
     <button class="at hot ctr t-plate" style="--x:118;--y:625;--w:185;--h:48;color:#fff4dc" id="cBack">뒤로</button>
-    <button class="at hot ctr" style="--x:440;--y:610;--w:375;--h:62;color:#fff;font-size:28px;text-shadow:0 2px 0 #0004" id="cStart">축제 시작하기</button>
+    <button class="at hot ctr" style="--x:440;--y:610;--w:375;--h:62;color:#fff;font-size:28px;text-shadow:0 2px 0 #0004;padding:0 48px 0 34px;white-space:nowrap" id="cStart">축제 시작하기</button>
     <div class="at ctr" style="--x:870;--y:628;--w:290;--h:44;font-size:15px;color:var(--ink2)" id="cHint">이름을 쓰고 캐릭터를 골라요.</div>
   </div>
 
@@ -490,11 +489,11 @@ table.tt tr.ck{cursor:pointer}
     <div class="at" style="--x:874;--y:117;--w:176;--h:36" id="tab2"><div class="tab" style="width:100%">권유</div></div>
     <div class="at cover" style="--x:436;--y:157;--w:614;--h:232;background:#fcf0d9" id="chat"></div>
     <div class="at ctr" style="--x:470;--y:392;--w:470;--h:34;background:#f8ecd3;border-radius:10px" id="prompt"></div>
-    <button class="at hot ctr" style="--x:948;--y:388;--w:147;--h:40;padding-left:30px;font-size:18px;color:var(--green-d)" id="listenBtn">다시 듣기</button>
+    <button class="at hot ctr" style="--x:948;--y:388;--w:147;--h:40;font-size:18px;color:var(--green-d);padding:0 8px 0 48px;white-space:nowrap" id="listenBtn">다시 듣기</button>
     <button class="at ch" style="--x:448;--y:437;--w:660;--h:52" data-i="0"><span class="num">1</span><span class="ct"></span></button>
     <button class="at ch" style="--x:448;--y:498;--w:660;--h:52" data-i="1"><span class="num">2</span><span class="ct"></span></button>
     <button class="at ch" style="--x:448;--y:560;--w:660;--h:52" data-i="2"><span class="num">3</span><span class="ct"></span></button>
-    <button class="at hot ctr" style="--x:647;--y:627;--w:258;--h:44;color:#fff4dc;font-size:19px" id="laterBtn">나중에 안내하기</button>
+    <button class="at hot ctr" style="--x:647;--y:627;--w:258;--h:44;color:#fff4dc;font-size:19px;padding:0 32px 0 32px;white-space:nowrap" id="laterBtn">나중에 안내하기</button>
   </div>
 
   <!-- 새 부스 건설 -->
@@ -504,7 +503,7 @@ table.tt tr.ck{cursor:pointer}
     <button class="at hot" style="--x:1140;--y:42;--w:62;--h:62;border-radius:50%" id="bX"></button>
     <div id="bCards"></div>
     <div class="at ctr" style="--x:372;--y:610;--w:510;--h:40;font-size:18px">새로운 부스를 열어 축제를 풍성하게 꾸며요.</div>
-    <button class="at hot ctr" style="--x:937;--y:610;--w:212;--h:48;color:#fff4dc;font-size:19px" id="bBack">축제로 돌아가기</button>
+    <button class="at hot ctr" style="--x:937;--y:610;--w:212;--h:48;color:#fff4dc;font-size:19px;padding:0 26px 0 30px;white-space:nowrap" id="bBack">축제로 돌아가기</button>
   </div>
 
   <!-- 업그레이드 -->
@@ -527,8 +526,8 @@ table.tt tr.ck{cursor:pointer}
     <div class="at" style="--x:476;--y:530;--w:342;--h:58;background:#fbf6e8;border-radius:12px;border:2px solid #e2d2ac;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px" id="uProg"></div>
     <div class="at" style="--x:830;--y:532;--w:220;--h:52;background:#e9f6ef;border-radius:14px;display:flex;align-items:center;justify-content:center" id="uHelp"></div>
     <button class="at gb" data-gb="upgrade" style="--x:338;--y:598;--w:420;--h:91" id="uBtn" aria-label="업그레이드하기"><span class="amt"></span></button>
-    <div class="at ctr why" style="--x:350;--y:680;--w:395;--h:22" id="uWhy"></div>
-    <button class="at hot ctr" style="--x:762;--y:614;--w:176;--h:54;font-size:22px" id="uNext">다음에</button>
+    <div class="at ctr why" style="--x:476;--y:504;--w:342;--h:22;background:#fff6e3ee;border-radius:8px;font-size:15px" id="uWhy"></div>
+    <button class="at hot ctr" style="--x:762;--y:614;--w:176;--h:54;font-size:22px;padding:0 22px 0 22px;white-space:nowrap" id="uNext">다음에</button>
   </div>
 
   <!-- 꾸미기 -->
@@ -543,7 +542,7 @@ table.tt tr.ck{cursor:pointer}
     <div class="at" style="--x:700;--y:608;--w:120;--h:82;background:var(--cream);display:flex;align-items:center;justify-content:center" id="dPrevImg"></div>
     <div class="at" style="--x:826;--y:610;--w:155;--h:78;display:flex;flex-direction:column;justify-content:center;background:var(--cream)" id="dPrevTx"></div>
     <button class="at gb" data-gb="install" style="--x:975;--y:601;--w:250;--h:52" id="dBuy" aria-label="설치하기"></button>
-    <button class="at hot ctr" style="--x:990;--y:655;--w:220;--h:33;font-size:16px" id="dCancel">돌아가기</button>
+    <button class="at hot ctr" style="--x:990;--y:655;--w:220;--h:33;font-size:16px;padding:0 8px 0 8px;white-space:nowrap" id="dCancel">돌아가기</button>
   </div>
 
   <!-- 결과 -->
@@ -562,8 +561,8 @@ table.tt tr.ck{cursor:pointer}
     <div class="at ctr" style="--x:855;--y:514;--w:262;--h:62;font-size:19px;line-height:1.2" id="rExp"></div>
     <button class="at hot" style="--x:1120;--y:515;--w:58;--h:58;border-radius:50%" id="rSpk"></button>
     <div class="at ctr" style="--x:110;--y:622;--w:605;--h:52;font-size:20px" id="rMsg"></div>
-    <button class="at hot ctr" style="--x:755;--y:618;--w:230;--h:58;padding-left:70px;font-size:21px" id="rBook">학습 기록 보기</button>
-    <button class="at hot ctr" style="--x:1000;--y:618;--w:215;--h:58;padding-left:70px;font-size:23px;color:#fff" id="rHome">처음으로</button>
+    <button class="at hot ctr" style="--x:755;--y:618;--w:230;--h:58;font-size:21px;padding:0 10px 0 82px;white-space:nowrap" id="rBook">학습 기록 보기</button>
+    <button class="at hot ctr" style="--x:1000;--y:618;--w:215;--h:58;font-size:23px;color:#fff;padding:0 12px 0 86px;white-space:nowrap" id="rHome">처음으로</button>
   </div>
 
 
@@ -626,7 +625,7 @@ table.tt tr.ck{cursor:pointer}
     <div class="at ctr" style="--x:935;--y:436;--w:210;--h:56;flex-direction:column;line-height:1.15" id="cdSel"></div>
     <div class="at ctr" style="--x:935;--y:512;--w:245;--h:36;font-size:14px;justify-content:flex-start;line-height:1.1" id="cdNote"></div>
     <button class="at hot" style="--x:880;--y:568;--w:345;--h:92;border-radius:40px" id="cdSend" aria-label="보내기"></button>
-    <button class="at hot ctr" style="--x:120;--y:625;--w:195;--h:44;color:#fff4dc;font-size:19px;padding-left:30px" id="cdBack">돌아가기</button>
+    <button class="at hot ctr" style="--x:120;--y:625;--w:195;--h:44;color:#fff4dc;font-size:19px;padding:0 18px 0 42px;white-space:nowrap" id="cdBack">돌아가기</button>
   </div>
 
   <!-- 교사 화면 -->
@@ -1118,11 +1117,11 @@ function renderUpgrade(){
   let h;
   if(b.helper) h = `<div class="pill mint" style="width:190px;height:40px">🧑‍🍳 근무 중</div>`;
   else if(b.missions < CONFIG.helperUnlock) h = `<div class="pill" style="width:200px;height:42px;background:#d9d6c3;color:#6d6650;font-size:16px">🔒 미션 3회 성공 시 해금</div>`;
-  else h = `<button class="ib green" style="width:205px;height:48px;font-size:18px" ${S.coins<CONFIG.helperCost?'disabled':''} onclick="doHelper()">고용 🪙${CONFIG.helperCost}</button>`;
+  else h = `<button class="ib green" style="width:230px;height:52px;font-size:18px" ${S.coins<CONFIG.helperCost?'disabled':''} onclick="doHelper()">고용 🪙${CONFIG.helperCost}</button>`;
   $('uHelp').innerHTML = h;
   const ub = $('uBtn');
-  if(max){ ub.dataset.gb='maxlv'; ub.querySelector('.amt').textContent=''; ub.disabled = false; ub.classList.add('off'); $('uWhy').textContent=''; }
-  else { const cost = CONFIG.upCost[nx]; ub.dataset.gb='upgrade'; ub.classList.remove('off'); ub.querySelector('.amt').textContent = cost; ub.disabled = S.coins<cost; $('uWhy').textContent = need(cost); }
+  if(max){ ub.dataset.gb='maxlv'; ub.querySelector('.amt').textContent=''; ub.disabled = false; ub.classList.add('off'); $('uWhy').textContent=''; $('uWhy').style.display='none'; }
+  else { const cost = CONFIG.upCost[nx]; ub.dataset.gb='upgrade'; ub.classList.remove('off'); ub.querySelector('.amt').textContent = cost; ub.disabled = S.coins<cost; $('uWhy').textContent = need(cost); $('uWhy').style.display = need(cost)?'':'none'; }
   gbPaint(ub);
 }
 function doUp(){ const k=upK, b=S.booths[k]; if(b.lv>=3||!spend(CONFIG.upCost[b.lv+1])) return;
@@ -1849,7 +1848,7 @@ function openPin(){
   openPanel('👩‍🏫 선생님 입장', `<div class="pinpad col" style="align-items:center;gap:12px">
       <div style="font-size:18px;color:var(--ink2)">선생님 비밀번호를 입력해 주세요</div>
       <input id="pinIn" type="password" maxlength="30" autocomplete="off" autocapitalize="off" spellcheck="false">
-      <button class="ib green" style="width:220px;height:60px;font-size:23px" onclick="checkPin()">들어가기</button>
+      <button class="ib green" style="width:260px;height:66px;font-size:23px" onclick="checkPin()">들어가기</button>
       <div class="why" id="pinWhy"></div></div>`);
   setTimeout(()=>{ const i=$('pinIn'); if(i){ i.focus(); i.onkeydown=e=>{ if(e.key==='Enter') checkPin(); }; } }, 50);
 }
@@ -2049,9 +2048,9 @@ function tDetail(list){
         <div class="row"><div class="stat s3"><span class="ic">📘</span><div><span>영어 미션</span><b>${p.missions||0}회</b></div></div><div class="stat s4"><span class="ic">🎯</span><div><span>첫 시도 정답률</span><b>${accP(p)==null?'-':accP(p)+'%'}</b></div></div></div>
         <div class="tc"><h4>🏮 부스 성장</h4><div class="row">${ORDER.map(k=>{const lv=(p.booths||{})[k]||0; return `<div style="flex:1;text-align:center;font-size:14px">${CULT[k].booth}<div style="height:58px;display:flex;align-items:flex-end;justify-content:center">${lv?`<img src="${A['booth_'+k+'_'+lv]}" style="max-width:100%;max-height:58px">`:'<span style="color:#bbb">미개장</span>'}</div>${lv?'Lv.'+lv:''}${(p.helpers||{})[k]?' 🧑‍🍳':''}</div>`;}).join('')}</div></div>
         <div class="tc" style="flex:none"><h4>💬 친구와의 상호작용</h4>${ev.map(e=>`<div class="ev"><span class="tm">${fmtT(e.t)}</span>${e.from===p.id?`${esc(e.toName)}에게 ${KIND_KO[e.kind]} 보냄`:`${esc(e.fromName)}에게 ${KIND_KO[e.kind]} 받음`} ${KIND_IC[e.kind]}</div>`).join('')||'<div style="color:#a08a6a">아직 없어요</div>'}</div>
-        <div class="tc row" style="align-items:center;padding:6px 12px;flex-wrap:wrap">⚙ 이 학생 장난 <button class="tg ${allow.prank!==false?'on':''}" onclick="tSetStu('${p.id}','prank',${allow.prank===false})"></button>
-          ${p.help?`<button class="hp2 red" onclick="NET.update(tp('/players/${p.id}'),{helpAck:NET.now()});tToast('도움 요청을 확인했어요')">🚨 도움 확인 완료</button>`:''}
-          <button class="hp2 grn" style="margin-left:auto" onclick="tPraise('${p.id}')">👏 칭찬 보내기</button></div>
+        <div class="tc row" style="align-items:center;padding:6px 10px;flex:none;gap:8px;white-space:nowrap">⚙ 장난 <button class="tg ${allow.prank!==false?'on':''}" onclick="tSetStu('${p.id}','prank',${allow.prank===false})"></button>
+          ${p.help?`<button class="hp2 red" style="padding:6px 10px" onclick="NET.update(tp('/players/${p.id}'),{helpAck:NET.now()});tToast('도움 요청을 확인했어요')">🚨 도움 확인</button>`:''}
+          <button class="hp2 grn" style="margin-left:auto;padding:6px 10px" onclick="tPraise('${p.id}')">👏 칭찬 보내기</button></div>
       </div></div></div>`;
 }
 function tSetStu(id,k,v){ NET.update(tp('/settings/students/'+id), {[k]:v}); SFX.tap(); }
@@ -2182,7 +2181,9 @@ function fitOver(el){
   const l=Math.min(...rs.map(x=>x.left)), rr=Math.max(...rs.map(x=>x.right)), t=Math.min(...rs.map(x=>x.top)), b=Math.max(...rs.map(x=>x.bottom));
   return l<L || rr>R || t<T || b>B || el.scrollWidth>el.clientWidth+1 || el.scrollHeight>el.clientHeight+2;
 }
+function ibPad(el){ if(!el.matches('.ib.green,.ib.cream,.ib.wood,.ib.gray')) return; const w=el.offsetWidth; if(!w) return; const p=Math.round(w*0.21)+'px'; if(el.style.paddingLeft!==p){ el.style.setProperty('padding-left',p,'important'); el.style.setProperty('padding-right',p,'important'); } }
 function fitOne(el){
+  ibPad(el);
   if(!el.offsetParent) return;
   if(el.dataset.fs0===undefined) el.dataset.fs0 = parseFloat(getComputedStyle(el).fontSize);
   let fs = +el.dataset.fs0; el.style.fontSize = fs+'px';
