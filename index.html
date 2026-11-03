@@ -2171,16 +2171,26 @@ $('tTeacher').onclick = ()=>{ SFX.tap(); openPin(); };
 
 
 /* ===== 버튼 글씨 자동 맞춤: 칸보다 길면 글씨를 줄여요 ===== */
-const FIT_SEL = '.ib:not(.bt), .mb span, #dlg .ch .ct, .hot.ctr, .hp2, .mbtn2, .tile .nm, .pk';
+const FIT_SEL = '.ib, .mb span, #dlg .ch .ct, .hot.ctr, .hp2, .mbtn2, .tile .nm, .pk, .pill, #rcvOv .m, .rcv .h, .t-plate, .t-title, .rl, .rv, #prompt, .badge-prot, #tNav button, .tabs2 button, .seg2 button, .lower .why, .empty .nm';
+function fitOver(el){
+  const r=el.getBoundingClientRect(); if(!r.width||!el.offsetWidth) return false;
+  const k=r.width/el.offsetWidth, cs=getComputedStyle(el);
+  const L=r.left+(parseFloat(cs.paddingLeft)+parseFloat(cs.borderLeftWidth))*k-1, R=r.right-(parseFloat(cs.paddingRight)+parseFloat(cs.borderRightWidth))*k+1;
+  const T=r.top-1, B=r.bottom+1;
+  const rg=document.createRange(); rg.selectNodeContents(el);
+  const rs=[...rg.getClientRects()].filter(x=>x.width>0&&x.height>0); if(!rs.length) return false;
+  const l=Math.min(...rs.map(x=>x.left)), rr=Math.max(...rs.map(x=>x.right)), t=Math.min(...rs.map(x=>x.top)), b=Math.max(...rs.map(x=>x.bottom));
+  return l<L || rr>R || t<T || b>B || el.scrollWidth>el.clientWidth+1 || el.scrollHeight>el.clientHeight+2;
+}
 function fitOne(el){
   if(!el.offsetParent) return;
   if(el.dataset.fs0===undefined) el.dataset.fs0 = parseFloat(getComputedStyle(el).fontSize);
   let fs = +el.dataset.fs0; el.style.fontSize = fs+'px';
-  const tooBig = ()=> el.scrollWidth > el.clientWidth+1 || el.scrollHeight > el.clientHeight+2;
-  let n=0; while(tooBig() && fs>11 && n++<30){ fs -= 1; el.style.fontSize = fs+'px'; }
+  let n=0; while(fitOver(el) && fs>10 && n++<40){ fs -= 1; el.style.fontSize = fs+'px'; }
 }
 let fitQ=false;
 function fitAll(){ if(fitQ) return; fitQ=true; requestAnimationFrame(()=>{ fitQ=false; document.querySelectorAll(FIT_SEL).forEach(fitOne); }); }
+try{ document.fonts && document.fonts.ready.then(()=>fitAll()); document.fonts && document.fonts.addEventListener && document.fonts.addEventListener('loadingdone', ()=>fitAll()); }catch(e){}
 new MutationObserver(muts=>{ if(muts.some(m=>!(m.target.closest && m.target.closest('#peopleL,#fxL,#prankL,#toast')))) fitAll(); }).observe(document.getElementById('stage'), {childList:true, subtree:true, characterData:true, attributes:true, attributeFilter:['class']});
 
 
